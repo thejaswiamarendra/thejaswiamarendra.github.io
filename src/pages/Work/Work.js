@@ -9,7 +9,9 @@ const Work = () => {
     return (
         <div id='Work' className='work-border'>
             <div className='work'>
-                WORK
+                <div className='wip'>
+                    <h1 className='wiph'>UNDER CONSTRUCTION</h1>
+                </div>
             </div>
         </div>
         

@@ -7,7 +7,9 @@ import './Personal.css';
 const Personal = () => {
     return (
         <div id='Personal' className='personal'>
-            PERSONAL
+            <div className='wip'>
+                    <h1 className='wiph'>UNDER CONSTRUCTION</h1>
+                </div>
         </div>
     )
 }

@@ -8,7 +8,9 @@ const Contact = () => {
     return (
         
         <div id='Contact' className='contact'>
-            CONTACT
+            <div className='wip'>
+                    <h1 className='wiph'>UNDER CONSTRUCTION</h1>
+                </div>
         </div>
     )
 }

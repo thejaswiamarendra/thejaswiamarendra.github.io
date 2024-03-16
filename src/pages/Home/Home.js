@@ -19,10 +19,6 @@ const Home = () => {
             >
                 <div className='home-badge'>
 
-                    <br></br>
-                    <br></br>
-
-
                     <div className='badge-cmp'>
                         <h1 className='h-text'>Thejaswi Amarendra</h1>
                     </div>
