@@ -1,7 +1,5 @@
-import homeBackground from '../assets/home-background.png';
-import workBackground from '../assets/work-background.png'
+import thejaswi from '../assets/thejaswi.png'
 
-export {
-    homeBackground,
-    workBackground
+export default {
+    thejaswi,
 };

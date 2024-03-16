@@ -1,10 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Source Sans Pro";
 }
 
 a {
@@ -12,6 +9,8 @@ a {
     color: inherit; /* Inherit color from parent */
   }
 .container {
+    z-index: 1;
+    position:relative;
 background: transparent;
 display: flex;
 align-items: center;
@@ -54,14 +53,17 @@ transform: translate(-50%, -50%);
 z-index: -1;
 opacity: 0;
 transition: top 0.5s, opacity 0.5s;
+
 }
 nav ul li:hover {
 color: #fff;
+
 }
 a:hover {
     color: #fff;
+
 }
 nav ul li:hover::after {
-top: 50%;
-opacity: 1;
+    top: 50%;
+    opacity: 1;
 }

@@ -14,9 +14,6 @@ const App = ()=> {
         <div className='app'>
             <Navbar/>
             <Home/>
-            <Work/>
-            <Personal/>
-            <Contact/>
       </div>
     );
 }
