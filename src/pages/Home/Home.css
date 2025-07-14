@@ -1,44 +1,269 @@
-.home {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../assets/home.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 15px solid white;
+/* Home page specific styles */
+.home-section {
+  /* background-image: url(../../assets/home.png); */
 }
 
+/* Overriding common component for home page layout */
+.home-content {
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.home-main-content {
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  padding-top: 2rem;
+}
+
+.home-sidebar {
+  flex: 0 0 300px; /* Give sidebar a fixed base width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* This contains the name badge and image */
 .name__header-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items:flex-end;
-    height: 90%;
-    margin: 0 2rem;
-  
-    @media screen and (max-width: 1200px) {
-      width: 100%;
-      margin-right: 0rem;
-    }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.home-badge {
-    .badge-cmp,
-    .tag-cmp {
-      padding: 1rem 2rem;
-      background: white;
-      border-radius: 25px;
-      width: fit-content;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-      .h-text {
-        letter-spacing: 5px;
-    }
-    .h3-text {
-        letter-spacing: 3px
-    }
-    }
-    
-    .tag-cmp {
+.profile-image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 7%;
+  overflow: hidden;
+  border: 2px solid white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Individual badge styling */
+.badge-cmp {
+  padding: 1rem 2rem;
+  /* background: rgb(255, 255, 255); */
+  border-radius: 25px;
+  /* border: 5px solid rgb(122, 239, 90); */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.7),
+  0 0 60px rgba(0, 255, 255, 0.7);
+  transition: box-shadow 0.3s;
+  width: fit-content; /* Make it full width of its container */
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); */
+  color: black;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.badge-cmp .h-text {
+  color: white;
+  letter-spacing: 0.7rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.home-sidebar .badge-cmp .h3-text {
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+
+}
+
+
+.experience-column {
+  /* This class is on the .scrollable-content div, so we style its children */
+}
+
+.company-block {
+  margin-bottom: 40px;
+}
+
+.company-block h2 {
+  font-size: 1.75rem;
+  letter-spacing: 8px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.work-item {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-align: left;
+  list-style: none;
+}
+
+.work-header {
+  display: flex;
+  letter-spacing: 3px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.work-title {
+  font-size: 1.25rem;
+  letter-spacing: 4px;
+  flex-grow: 1;
+}
+
+.work-duration {
+  font-size: 15px;
+  font-style: italic;
+  color: white;
+  white-space: nowrap;
+  margin-left: 15px;
+  text-align: right;
+}
+
+.work-description, .work-skills {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-left: 35px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1000px) {
+  .experience-section {
+      padding: 120px 1rem 2rem;
+      border: none;
+      background-image: none;
+      background-color: #000;
+      height: auto;
+      min-height: 100vh;
+      overflow-y: auto;
+  }
+
+  .experience-column {
+      max-height: none;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+  }
+  .company-block h2, .work-title {
+      font-size: 18px;
+  }
+
+  .work-description, .work-skills {
+      font-size: 16px;
+      margin-left: 0;
+  }
+
+  .work-header {
       flex-direction: column;
-      margin-top: 3rem;
-    }
+      align-items: flex-start;
+      margin-bottom: 5px; /* Add some space between stacked items */
+  }
+
+  .work-duration {
+      margin-left: 0;
+      margin-top: 5px;
+      text-align: left;
+  }
+}
+
+.education-column {
+  /* This class is on the .scrollable-content div, so we style its children */
+}
+
+.education-image-container {
+  width: 60%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  margin: 1.5rem auto 0;
+  border-radius: 10px;
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.graduation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.institution-block {
+  margin-bottom: 40px;
+}
+
+.institution-block h2 {
+  font-size: 1.75rem;
+  letter-spacing: 8px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-item {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-align: left;
+  list-style: none;
+}
+
+.education-header {
+  display: flex;
+  letter-spacing: 3px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.education-degree {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  margin-left: 35px;
+}
+
+.education-duration {
+  font-size: 15px;
+  font-style: italic;
+  color: white;
+  white-space: nowrap;
+  margin-left: 15px;
+  text-align: right;
+}
+
+.education-description, .education-skills {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-left: 35px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+  .institution-block h2, .education-degree {
+      font-size: 18px;
+  }
+
+  .education-description, .education-skills {
+      font-size: 16px;
+      margin-left: 0;
+  }
+
+  .education-header {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 5px; /* Add some space between stacked items */
+  }
+
+  .education-duration {
+      margin-left: 0;
+      margin-top: 5px;
+      text-align: left;
+  }
 }

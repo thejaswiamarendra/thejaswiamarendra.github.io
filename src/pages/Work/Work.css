@@ -1,23 +1,122 @@
-.work {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../assets/work.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 15px solid white;
+/* Experience page specific styles */
+.work-section {
+    /* background-image: url(../../assets/work.png); */
 }
 
-.wip {
-    display: flex;
+.work-column {
+    /* This class is on the .scrollable-content div, so we style its children */
+}
+
+.publication-column {
+    /* This class is on the .scrollable-content div, so we style its children */
+}
+
+
+.project-block {
+    margin-bottom: 80px;
+}
+
+.project-block h2 {
+    font-size: 1.25rem;
+    letter-spacing: 4px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-block h2 a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    letter-spacing: 5px;
-    font-size: 25px;
-    .wiph {
-        width:fit-content;
-        background-color: white;
-        padding: 2%;
-        border-radius: 60px;
+}
+
+.project-block h2 a:hover {
+    text-decoration: underline;
+}
+
+.link-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    filter: invert(1);
+}
+
+.work-item {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: left;
+    list-style: none;
+}
+
+.work-header {
+    display: flex;
+    letter-spacing: 3px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.work-title {
+    font-size: 1.25rem;
+    letter-spacing: 4px;
+    flex-grow: 1;
+}
+
+.work-duration {
+    font-size: 15px;
+    font-style: italic;
+    color: white;
+    white-space: nowrap;
+    margin-left: 15px;
+    text-align: right;
+}
+
+.work-description, .work-skills {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    margin-left: 35px;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1000px) {
+    .work-section {
+        padding: 120px 1rem 2rem;
+        border: none;
+        background-image: none;
+        background-color: #000;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
     }
-  }
+
+    .work-column {
+        max-height: none;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .project-block h2, .work-title {
+        font-size: 18px;
+    }
+
+    .work-description, .work-skills {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .work-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 5px; /* Add some space between stacked items */
+    }
+
+    .work-duration {
+        margin-left: 0;
+        margin-top: 5px;
+        text-align: left;
+    }
+}

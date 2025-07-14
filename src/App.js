@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Routes, Route, useLocation, useNavigate, useParams,} from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import Contact from './pages/Contact/Contact';
+import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
-import Personal from './pages/Personal/Personal';
 import Work from './pages/Work/Work';
-import { Navbar } from './components';
+import Personal from './pages/Personal/Personal';
 
 import './App.css';
-const App = ()=> {
 
-    return (
-        <div className='app'>
-            <Navbar/>
-            <Home/>
-            <Work/>
-            <Personal/>
-            <Contact/>
-      </div>
-    );
+function App() {
+  return (
+    <div className="app">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/personal" element={<Personal />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;

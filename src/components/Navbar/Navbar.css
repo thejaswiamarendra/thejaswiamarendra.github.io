@@ -11,34 +11,35 @@ a {
 .container {
     z-index: 1;
     position:relative;
-background: transparent;
-display: flex;
-align-items: center;
-justify-content: center;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 nav {
-position: fixed;
-top: 5%;
-background: white;
-border-radius: 50px;
-padding: 10px;
-box-shadow: 0 25px 20px -20px #00000066;
+    position: fixed;
+    top: 3%;
+    background: white;
+    border-radius: 50px;
+    padding: 0.5px;
+    box-shadow: 0 25px 20px -20px #00000066;
 }
 nav ul li {
-list-style: none;
-display: inline-block;
-padding: 15px 35px;
-margin: 10px;
-font-size: 18px;
-letter-spacing: 4px;
-font-weight: 500;
-color: #000000;
-cursor: pointer;
-position: relative;
-z-index: 2;
-transition: color 0.5s;
-
-
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s;
+}
+nav ul li a {
+    display: block;
+    padding: 15px 35px;
 }
 nav ul li::after {
 content: "";
@@ -53,7 +54,6 @@ transform: translate(-50%, -50%);
 z-index: -1;
 opacity: 0;
 transition: top 0.5s, opacity 0.5s;
-
 }
 nav ul li:hover {
 color: #fff;
@@ -66,4 +66,31 @@ a:hover {
 nav ul li:hover::after {
     top: 50%;
     opacity: 1;
+}
+
+/* Responsive adjustments for Navbar */
+@media screen and (max-width: 768px) {
+    nav {
+        top: 2%;
+        padding: 0;
+    }
+    nav ul li {
+        margin: 8px;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    nav ul li a {
+        padding: 12px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li {
+        margin: 5px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    nav ul li a {
+        padding: 10px 10px;
+    }
 }
