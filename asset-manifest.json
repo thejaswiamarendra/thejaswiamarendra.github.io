@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6fd0fc79.css",
-    "main.js": "/static/js/main.ae6ed5bf.js",
+    "main.css": "/static/css/main.1ae04f87.css",
+    "main.js": "/static/js/main.e3f24790.js",
     "static/media/graduation.png": "/static/media/graduation.ecc8a7f41f7947a4d08b.png",
     "static/media/shirahamaEngetsuIsland.png": "/static/media/shirahamaEngetsuIsland.929354ad516871ab69bf.png",
     "static/media/shinobazuPondAtNight.png": "/static/media/shinobazuPondAtNight.0d365c088c25fad21856.png",
@@ -11,11 +11,11 @@
     "static/media/basishinjiBeach.png": "/static/media/basishinjiBeach.d524539f85c07337aefd.png",
     "static/media/moonOverToyamaPlain.png": "/static/media/moonOverToyamaPlain.c0beefac2005ceab6f0a.png",
     "index.html": "/index.html",
-    "main.6fd0fc79.css.map": "/static/css/main.6fd0fc79.css.map",
-    "main.ae6ed5bf.js.map": "/static/js/main.ae6ed5bf.js.map"
+    "main.1ae04f87.css.map": "/static/css/main.1ae04f87.css.map",
+    "main.e3f24790.js.map": "/static/js/main.e3f24790.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fd0fc79.css",
-    "static/js/main.ae6ed5bf.js"
+    "static/css/main.1ae04f87.css",
+    "static/js/main.e3f24790.js"
   ]
 }
