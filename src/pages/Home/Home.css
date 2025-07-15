@@ -1,6 +1,6 @@
 /* Home page specific styles */
 .home-section {
-  /* background-image: url(../../assets/home.png); */
+  /* background-image: url(../../assets/personal.png); */
 }
 
 /* Overriding common component for home page layout */
@@ -55,8 +55,8 @@
   /* background: rgb(255, 255, 255); */
   border-radius: 25px;
   /* border: 5px solid rgb(122, 239, 90); */
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.7),
-  0 0 60px rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 20px white, 0 0 40px rgba(255, 255, 255, 0.7),
+  0 0 60px rgb(255, 255, 255);
   transition: box-shadow 0.3s;
   width: fit-content; /* Make it full width of its container */
   /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); */
@@ -222,7 +222,7 @@
 }
 
 .education-degree {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: 4px;
   margin-left: 35px;
 }
@@ -266,4 +266,72 @@
       margin-top: 5px;
       text-align: left;
   }
+}
+
+.positions-of-responsibility {
+  margin-top: 2rem;
+  margin-left: 35px;
+}
+
+.responsibility-heading {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.responsibility-item {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.responsibility-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.responsibility-position {
+  font-size: 1.05rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.responsibility-duration {
+  font-size: 0.85rem;
+  font-style: italic;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+.responsibility-teacher {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 0.25rem;
+    letter-spacing: 1px;
+}
+
+.responsibility-desc {
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 480px) {
+    .positions-of-responsibility {
+        margin-left: 0;
+    }
+    .responsibility-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .responsibility-duration {
+        margin-left: 0;
+        margin-top: 4px;
+    }
 }

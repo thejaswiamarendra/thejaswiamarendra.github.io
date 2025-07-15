@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import './Work.css';
 import linkImage from '../../assets/link.png';
 
-
 const publications = {
     'ROS-Kafka Gateway for Scalable, Remote and Cross-Platform Robotic System Communication': {
         'abstract': 'This paper proposes a method aimed at integrating Robot Operating System (ROS) with Apache Kafka, a distributed event streaming platform, to harness the features of Kafka like scalability, fault tolerance, reliability.',
@@ -24,9 +23,13 @@ const publications = {
     }
 }
 
-const Work = () => {
+const Work = ({ bgImage }) => {
+    // In case the bgImage prop is not yet available during an initial render
+    if (!bgImage) {
+        return  null;
+    }
     return (
-        <div className='page-section work-section'>
+        <div className='page-section work-section' style={{ backgroundImage: `url(${bgImage.src})` }}>
             <div className='page-part'>
                 <h1 className='h1-heading'>Publications</h1>
                 <motion.div
@@ -78,6 +81,11 @@ const Work = () => {
                         <h2 style={{textAlign: 'center'}}>WIP</h2>
                     </div>
                 </motion.div>
+            </div>
+            <div className="background-attribution">
+                <p>
+                <em>{bgImage.title}</em><br />{bgImage.artist}, {bgImage.year}
+                </p>
             </div>
         </div>
     )

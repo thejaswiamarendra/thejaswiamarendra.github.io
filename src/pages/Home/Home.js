@@ -1,8 +1,9 @@
 import React from 'react';
 import {motion } from 'framer-motion';
-
 import graduationImage from '../../assets/graduation.png'
 import './Home.css'
+
+
 
 const companies = {
     "Arista Networks": [
@@ -40,17 +41,44 @@ const education = {
         {
             'degree': 'Bachelor of Technology',
             'image': graduationImage,
-            'desc': 'Relevant Coursework: Data Structures, Algorithms, Operating Systems, Database Management Systems, Computer Networks.',
             'duration': 'Jan 2024 - Jun 2024',
-            'skills': ['REST APIs', 'GNMI', 'gRPC']
+            'grade': '9.35 CGPA',
+            'relevantCourses': ['Data Structures and Algorithms', 'Operating Systems', 'Database Management Systems', 'Computer Networks', 'Cloud Computing', 'Graph Theory'],
+            'positionsOfResponsibility': [
+                {
+                    'position': 'Teaching Assistant - AI and ML for CyberSecurity',
+                    'teacher': 'Dr. Preet Kanwal',
+                    'desc': 'Assisted in design and development of the course from the ground up, including syllabus design, resource curation, and creation of assignments and lecture materials.',
+                    'duration': 'July 2023 - January 2024',
+                },
+                {
+                    'position': 'Teaching Assistant - DBMS',
+                    'teacher': 'Dr. Praffulatha Auradkar',
+                    'desc': 'Assisted in creation and grading of assignments.',
+                    'duration': 'July 2023 - November 2023',
+                },
+                {
+                    'position': 'Secretary - IEEE Computer Society',
+                    'desc': 'Present on the founding team of the club and assigned the role of Secretary the following year. Involved in organizing inter-university hackathons and guiding summer research interns.',
+                    'duration': 'January 2022 - April 2023',
+                },
+                {
+                    'position': 'Member - PES Debating Society',
+                    'desc': 'Curated content for the PES DebSoc instagram page, desinged creatives for all the events hosted by the Society. As a member, participated in numeroud university level debate tournaments across India including IITB, Christ University, NALSAR etc.',
+                    'duration': 'April 2021 - July 2024',
+                }
+            ]
         }
     ]
 }
 
-const Home = () => {
-
+const Home = ({ bgImage }) => {
+    // In case the bgImage prop is not yet available during an initial render
+    if (!bgImage) {
+        return  null;
+    }
     return (
-        <div className='page-section home-section'>
+        <div className='page-section home-section' style={{ backgroundImage: `url(${bgImage.src})` }}>
             <div className='page-part'>
                 <motion.div
                     className="content-wrapper"
@@ -124,8 +152,23 @@ const Home = () => {
                                                 <h3 className="education-degree">{edu.degree}</h3>
                                                 <p className="education-duration">{edu.duration}</p>
                                             </div>
-                                            <p className="education-description">{edu.desc}</p>
-                                            <p className="education-skills"><strong>Skills:</strong> {edu.skills.join(', ')}</p>
+                                            <p className="education-skills"><strong>Grade: </strong>{edu.grade}</p>
+                                            <p className="education-skills"><strong>Relevant Courses: </strong>{edu.relevantCourses.join(', ')}</p><br></br>
+                                            <div className="positions-of-responsibility">
+                                                <h4 className="responsibility-heading">Positions of Responsibility</h4>
+                                                <ul>
+                                                    {edu.positionsOfResponsibility.map((pos, posIndex) => (
+                                                        <li className="responsibility-item" key={`${institution}-pos-${posIndex}`}>
+                                                            <div className="responsibility-header">
+                                                                <h5 className="responsibility-position">{pos.position}</h5>
+                                                                <p className="responsibility-duration">{pos.duration}</p>
+                                                            </div>
+                                                            {pos.teacher && <p className="responsibility-teacher">Under: {pos.teacher}</p>}
+                                                            <p className="responsibility-desc">{pos.desc}</p>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                             <div className='education-image-container'>
                                                 <motion.img
                                                     src={edu.image}
@@ -140,6 +183,11 @@ const Home = () => {
                     ))}
                 </div>
                 </motion.div>
+            </div>
+            <div className="background-attribution">
+                <p>
+                <em>{bgImage.title}</em><br />{bgImage.artist}, {bgImage.year}
+                </p>
             </div>
         </div>
     )
